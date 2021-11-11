@@ -1,27 +1,20 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import UploadIcon from '@mui/icons-material/Upload';
+import QrCodeScannerIcon from '@mui/icons-material/QrCodeScanner';
+import MenuBar from './components/MenuBar';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Button variant="contained" color="secondary">
-      Hello World
-    </Button>
-      </header>
+      <MenuBar/>
+      <br/>
+      <Stack direction="row" spacing={2}>
+      <Button color='secondary' variant="contained" startIcon={<UploadIcon />}>Upload</Button>
+      <Button color='secondary' variant="contained" startIcon={<QrCodeScannerIcon/>}>Scan Tag </Button>
+    </Stack>
     </div>
   );
 }
