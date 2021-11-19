@@ -1,25 +1,18 @@
-
-import './App.css';
-import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
-import UploadIcon from '@mui/icons-material/Upload';
-import QrCodeScannerIcon from '@mui/icons-material/QrCodeScanner';
-import MenuBar from './components/MenuBar';
-import DataTable from './components/DataTable';
+import "./App.css";
+import Appbar from "./components/Appbar";
+import { Routes, Route } from "react-router";
+import QRScanner from "./components/QRScanner";
+import Home from "./components/Home";
 
 function App() {
   return (
-    <div className="App">
-      <MenuBar/>
-      <br/>
-      <Stack className="button-grp" direction="row" spacing={2}>
-      <Button color='primary' variant="contained" startIcon={<UploadIcon />}>Upload</Button>
-      <Button color='primary' variant="contained" startIcon={<QrCodeScannerIcon/>}>Scan Tag</Button>
-    </Stack>
-    <br/>
-    <DataTable/>
-
-    </div>
+    <>
+      <Appbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/QRScanner" element={<QRScanner />} />
+      </Routes>
+    </>
   );
 }
 

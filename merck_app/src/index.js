@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {createTheme, ThemeProvider} from '@mui/material/styles';
+import {BrowserRouter} from "react-router-dom";
 
 const font = "'Lato', sans-serif";
 
@@ -28,7 +29,13 @@ const theme = createTheme({
   },
 });
 
-ReactDOM.render(<ThemeProvider theme={theme}><App /></ThemeProvider>,document.getElementById("root"));
+ReactDOM.render(
+<ThemeProvider theme={theme}>
+  <BrowserRouter>
+  <App />
+  </BrowserRouter>
+  </ThemeProvider>,document.getElementById("root")
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
